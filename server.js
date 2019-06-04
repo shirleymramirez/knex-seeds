@@ -7,7 +7,9 @@ const bodyParser = require('body-parser');
 const port = process.env.PORT || 8000;
 app.use(bodyParser.json());
 
-
+app.use((req,res)=> {
+    res.sendStatus(404);
+})
 
 app.listen(port, () => {
     console.log("Listening on port ", port);
